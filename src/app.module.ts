@@ -8,7 +8,7 @@ import { MongooseModule } from '@nestjs/mongoose';
 import config from './config/keys';
 
 @Module({
-  imports: [UsersModule, MongooseModule.forRoot(process.env.mongoURI || config.mongoURI)],
+  imports: [UsersModule, MongooseModule.forRoot(config.mongoURI)],
   controllers: [AppController],
   providers: [AppService],
 })
