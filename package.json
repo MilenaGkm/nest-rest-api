@@ -1,7 +1,11 @@
 {
-  "name": "nest-rest-api",
+  "name": "shift-publisher-nest",
   "version": "0.0.1",
   "description": "",
+  "engines": {
+    "node": ">=10.0.0",
+    "npm": ">=6.0.0"
+  },
   "author": "",
   "private": true,
   "license": "UNLICENSED",
