@@ -10,7 +10,7 @@ export class MsgsService {
     constructor(@InjectModel('Msg') private readonly msgModel: Model<Msg>) { }
 
     async findAll(): Promise<Msg[]> {
-        return await this.msgModel.find().populate("sender_id").populate("reciever_id");
+        return await this.msgModel.find().populate("sender_id").populate("reciever_id").sort({"date": -1});
     }
 
     async findOne(id: string): Promise<Msg> {
