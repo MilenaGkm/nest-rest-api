@@ -18,7 +18,7 @@ export class ScheduledShiftsController {
     }
 
     @Post()
-    create(@Body() createScheduledShiftDto: CreateScheduledShiftDto): Promise<void> {
+    create(@Body() createScheduledShiftDto: CreateScheduledShiftDto): Promise<ScheduledShift> {
         return this.scheduledShiftsService.create(createScheduledShiftDto);
     }
 

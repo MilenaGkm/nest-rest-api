@@ -15,7 +15,7 @@ export class ScheduledShiftsService {
         return await this.scheduledShiftModel.findOne({ _id: id });
     }
 
-    async create(scheduledShift: ScheduledShift): Promise<void> {
+    async create(scheduledShift: ScheduledShift): Promise<ScheduledShift> {
         // const newScheduledShift = new this.scheduledShiftModel(scheduledShift);
         const newScheduledShift = {
             adminId: scheduledShift.adminId,
@@ -29,8 +29,8 @@ export class ScheduledShiftsService {
         const saveNewScheduledShift = new this.scheduledShiftModel(newScheduledShift);
         // console.log("---------------------");
         
-        console.log(saveNewScheduledShift);
-        // return await saveNewScheduledShift.save();
+        // console.log(saveNewScheduledShift);
+        return await saveNewScheduledShift.save();
         // console.log(new Date().toLocaleString());
         // console.log(new Date().toLocaleTimeString());
         

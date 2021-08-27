@@ -13,13 +13,14 @@ export class RequestedShiftsService {
     }
 
     async findOne(id: string): Promise<RequestedShift> {
-        return await this.requestedShiftModel.findOne({ _id: id });
+        return await this.requestedShiftModel.findOne({ recieversIds: id });
     }
 
     async create(requestedShift: RequestedShift): Promise<RequestedShift> {
         // const newRequestedShift = new this.requestedShiftModel(requestedShift);
         const newRequestedShift = {
             adminId: requestedShift.adminId,
+            recieversIds: requestedShift.recieversIds,
             dateFrom: requestedShift.dateFrom,
             dateTo: requestedShift.dateTo,
             updateDate: new Date().toLocaleString(),

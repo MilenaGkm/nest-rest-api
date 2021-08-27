@@ -1,8 +1,9 @@
 export class CreateRequestedShiftDto {
-    adminId: string;
-    dateFrom: string;
-    dateTo: string;
-    updateDate: string;
-    createDate: string;
-    shifts: string;
+    readonly adminId: string;
+    readonly recieversIds: string;
+    readonly dateFrom: string;
+    readonly dateTo: string;
+    readonly updateDate: string;
+    readonly createDate: string;
+    readonly shifts: string;
 }
