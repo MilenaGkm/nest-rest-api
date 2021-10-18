@@ -11,8 +11,12 @@ export class UsersService {
         return await this.userModel.find();
     }
 
-    async findOne(id: string): Promise<User> {
-        return await this.userModel.findOne({ _id: id });
+    // async findOne(id: string): Promise<User> {
+    //     return await this.userModel.findOne({ _id: id });
+    // }
+
+    async findOne(username: string): Promise<User | void> {
+        return await this.userModel.findOne({ username: username });
     }
 
     async create(user: User): Promise<User> {

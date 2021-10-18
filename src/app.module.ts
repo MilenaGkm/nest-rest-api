@@ -12,10 +12,14 @@ import { MongooseModule } from '@nestjs/mongoose';
 // import { SubmittedShiftsService } from './submitted-shifts/submitted-shifts.service';
 // import { ScheduledShiftsController } from './scheduled-shifts/scheduled-shifts.controller';
 // import { ScheduledShiftsService } from './scheduled-shifts/scheduled-shifts.service';
+
+// import { AuthController } from './auth/auth.controller';
+
+import { AuthModule } from './auth/auth.module';
 import config from './config/keys';
 
 @Module({
-  imports: [UsersModule, AdminsModule, RequestedShiftsModule, SubmittedShiftsModule, ScheduledShiftsModule, MsgsModule, MongooseModule.forRoot(config.mongoURI)],
+  imports: [UsersModule, AdminsModule, RequestedShiftsModule, SubmittedShiftsModule, ScheduledShiftsModule, MsgsModule, MongooseModule.forRoot(config.mongoURI), AuthModule],
   controllers: [AppController],
   providers: [AppService],
 })
